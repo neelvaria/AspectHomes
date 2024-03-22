@@ -1,0 +1,144 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Contact - AspectHomes</title>
+	</head>
+{% include 'designer/nav.html' %}
+
+<body>
+<section class="w3l-inner-page-main">
+    <div class="inner-hyv-page">
+        <div class="wrapper">
+             <h2 class="hny-title text-center">Contact Us<span class="sub-dot">.</sub></h2>
+        </div>
+    </div>
+</section>
+
+	<section class="w3l-contact-section-form">
+		<div class="contact-sec-inner section-gap-contact">
+			<div class="wrapper">
+				<div class="contact-form-mainv">
+					<div class="display-ad" style="margin: 8px auto; display: block; text-align:center;"><!---728x90---></div>
+					<h3 class="hny-title text-center">Send a Message<span class="sub-dot">.</sub></h3>
+					<div class="display-ad" style="margin: 8px auto; display: block; text-align:center;"><!---728x90---></div>
+
+					<p class="para-contact text-center">Leave your contact info and we will be in touch shortly</p>
+
+					{%if messages %}
+                    {%for i in messages%}
+                    <script>alert("{{i}}");</script>
+                    {% endfor %}
+                    {% endif %}
+
+					<form method="post" action="{% url 'contactformdata' %}" >
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="w3lName">
+						</div>
+
+						<div class="form-group">
+							<label for="email">Email ID</label>
+							<input type="email" name="email" id="w3lSender">
+						</div>
+
+						<div class="form-group">
+							<label for="subject">Subject</label>
+							<input type="text" name="subject" id="w3lSubject" >
+						</div>
+
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea name="message" id="w3lMessage" spellcheck="false"></textarea>
+						</div>
+
+						<button type="submit" class="btn submit">Submit</button>
+					</form>
+				</div>
+				<div class="display-ad" style="margin: 8px auto; display: block; text-align:center;"><!---728x90---></div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<!-- footer-28 block -->
+		<section class="w3l-footer-28-main">
+			<div class="footer-28 section-gap1">
+				<div class="wrapper">
+					<div class="d-grid grid-col-4 footer-top-28">
+						<div class="footer-list-28">
+							<h6 class="footer-title-28">Menu Links</h6>
+							<ul>
+								<li><a href="/about">About</a></li>
+								<li><a href="/service">Services</a></li>
+								<li><a href="portfolio.html">Portfolio</a></li>
+							</ul>
+						</div>
+						<div class="footer-list-28">
+							<ul>
+								<h6 class="footer-title-28">Website Links</h6>
+								<li><a href="/blog">Blog</a></li>
+								<li><a href="/blogsingle">Blog Details</a></li>
+								<li><a href="coming-soon.html">Coming Soon</a></li>
+							</ul>
+						</div>
+						<div class="footer-list-28">
+							<ul>
+								<h6 class="footer-title-28">Support</h6>
+								<li><a href="/faq">FAQs</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="/termsservice">Terms of Service</a></li>
+								<li><a href="#">Privacy & Policy</a></li>
+							</ul>
+						</div>
+						<div class="footer-list-28">
+							<ul>
+								<h6 class="footer-title-28">Account</h6>
+								<li><a href="/login">Login</a></li>
+								<li><a href="/signup">Register</a></li>
+								<li><a href="/contact">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="midd-footer-28 grid-col-2">
+						<div class="copy-right">
+							<p class="copy-footer-28">&copy; 2023 AspectHomes. All rights reserved</p>
+						</div>
+						<div class="main-social-footer-28">
+							<a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+							<a class="twitter" href="#"><span class="fa fa-twitter"aria-hidden="true"></span></a>
+							<a class="instagram" href="#"><span class="fa fa-instagram"aria-hidden="true"></span></a>
+						</div>
+	
+					</div>
+				</div>
+			</div>
+			
+			<button onclick="topFunction()" id="movetop" title="Go to top">
+				<span class="fa fa-arrow-up" aria-hidden="true"></span>
+			</button>
+
+			<script>
+				window.onscroll = function () {
+					scrollFunction()
+				};
+	
+				function scrollFunction() {
+					if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+						document.getElementById("movetop").style.display = "block";
+					} else {
+						document.getElementById("movetop").style.display = "none";
+					}
+				}
+	
+				function topFunction() {
+					document.body.scrollTop = 0;
+					document.documentElement.scrollTop = 0;
+				}
+			</script>
+
+		</section>
+	</footer>
+</body>
+</html>

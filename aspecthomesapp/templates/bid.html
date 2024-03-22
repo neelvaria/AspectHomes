@@ -1,0 +1,61 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+{%include 'nav.html'%}
+<head>
+	<title>Requirement - AspectHomes</title>
+</head>
+
+
+<section class="w3l-inner-page-main">
+    <div class="inner-hyv-page">
+        <div class="wrapper">
+             <h2 class="hny-title text-center">Upload your Requirement<span class="sub-dot">.</sub></h2>
+        </div>
+    </div>
+</section>
+
+<section class="w3l-request-main-6-bid center-box">
+		<div class="w3l-form-12-content section-gap">
+				<div class="wrapper">
+					<div class="grid grid-column-2 ">
+						
+						<div class="column1">
+							<p class="tagline">ASPECTHOMES<label class="log-w">.</label></p>
+							<p class="form-para">Design as per your Requirement</p>
+                            <p class="req">(Propose your Budget as per your Requirement)</p><br>
+								<form method="post" action="{% url 'biddata' %}" enctype="multipart/form-data">
+									{% csrf_token %}
+									{%if messages %}
+                     				{%for i in messages%}
+                     				<script>alert("{{i}}");</script>
+                     				{% endfor %}
+                     				{% endif %}
+									<div class="">
+                                        <input type="file" id="image" name="preferredstyle" class="form-input" placeholder="Choose a file" />
+                                        <label for="image">Upload Image</label>
+                                    </div>
+                                    <div class="">
+										<textarea name="description" id="desc" cols="20" rows="2" placeholder="Description"/></textarea>
+									</div>
+									<div class="">
+										<input type="number" name="budget" class="form-input" placeholder="Budget Amount" />
+									</div>
+                                    <div class="">
+                                        <input type="file" name="virtual" class="form-input" placeholder="Upload File" />
+                                        <label>Upload image for 360degree</label>
+                                    </div>
+									<button type="submit" class="btn">Submit Request</button>
+								</form>
+							</div>
+							 <div class="column2">
+									<img src="{%static 'assets/images/bid1.jpg'%}" />
+							</div>
+	
+					</div>
+				</div>
+			</div>
+</section>
+{%include 'footer.html'%}
+</body>
+</html>

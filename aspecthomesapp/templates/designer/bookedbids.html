@@ -1,0 +1,143 @@
+{% load static %}
+{% include 'designer/nav.html' %}
+<style>  
+ * {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+table {
+    background-color: white;
+    width: 70%;
+    /* border-collapse: collapse; */
+    border: solid rgb(33, 43, 26) 2px;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-left: 15%;
+    margin-bottom: 40px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    max-width: 100%; /* Adjusted to 100% */
+    height: 100px;   /* Maintain aspect ratio */
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn:hover{
+    background-color: green;
+    
+}
+
+.btn-success {
+    background-color: #045757;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1200px) {
+    table {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    table {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    img {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    table {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+</style>
+  
+    <section class="w3l-inner-page-main">
+        <div class="inner-hyv-page">
+            <div class="wrapper">
+                 <h2 class="hny-title text-center">Booked Bids<span class="sub-dot">.</sub></h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Designername</th>
+                    <th>TotalAmount</th>
+                    <th>Mode of Payment</th>
+                    <th>Status</th>
+                    <th>Date</th>
+
+                </tr>
+            </thead>
+            {% for booking_instance, payment_modes in data_with_payment_modes %}
+    <tbody>
+        <tr>
+            <td>{{ booking_instance.u_id }}</td>
+            <td>{{ booking_instance.bid }}</td>
+            <td>{{ booking_instance.totalamount }}</td>
+            <td>
+                {% for payment_mode in payment_modes %}
+                    {{ payment_mode.mode }}
+                {% endfor %}
+            </td>
+            <td>{{ booking_instance.status }}</td>
+            <td>{{ booking_instance.paymentdate }}</td>
+        </tr>
+    </tbody>
+{% endfor %}
+
+
+
+        </table>
+    </div>
+    {% include 'designer/footer.html' %}
+    
+</body>
+</html>

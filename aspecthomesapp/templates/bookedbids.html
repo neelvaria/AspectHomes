@@ -1,0 +1,76 @@
+{% load static %}
+{% include 'nav.html' %}
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 735px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+     
+</style>
+    <section class="w3l-inner-page-main">
+        <div class="inner-hyv-page">
+            <div class="wrapper">
+                 <h2 class="hny-title text-center">Booked Services<span class="sub-dot">.</sub></h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Designername</th>
+                    <th>TotalAmount</th>
+                    <th>Mode of Payment</th>
+                    <th>Status</th>
+                    <th>Date</th>
+
+                </tr>
+            </thead>
+            {%for i in bdata%}
+            <tbody>
+                <tr>
+                    <td>{{i.u_id}}</td>
+                    <td>{{i.b_id}}</td>
+                    <td>{{i.b_id.totalamount}}</td>
+                    <td>{{i.mode}}</td>
+                    <td>{{i.status}}</td>
+                    <td>{{i.paymentdate}}</td>
+                </tr>
+            </tbody>
+            {%endfor%}
+
+
+        </table>
+    </div>
+
+{% include 'footer.html' %}
+</body>
+</html>

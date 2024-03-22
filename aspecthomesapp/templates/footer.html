@@ -1,0 +1,107 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+    <footer>
+        <!-- footer-28 block -->
+        <section class="w3l-footer-28-main">
+            <div class="footer-28 section-gap1">
+                <div class="wrapper">
+                    <div class="d-grid grid-col-4 footer-top-28">
+                        <div class="footer-list-28">
+                            <h6 class="footer-title-28">Menu Links</h6>
+                            <ul>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/service">Services</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="team.html">Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-list-28">
+                            <ul>
+                                <h6 class="footer-title-28">Website Links</h6>
+                                {% comment %} <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-single.html">Blog Details</a></li> {% endcomment %}
+                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                <li><a href="/bid">Upload Requirement</a></li>
+                                <li><a href="/viewbidding">View Bidding</a></li>
+                                <li><a href="/gallery">Our Design</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-list-28">
+                            <ul>
+                                <h6 class="footer-title-28">Support</h6>
+                                <li><a href="/faq">FAQs</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="/termsservice">Terms of Service</a></li>
+                                <li><a href="#">Privacy & Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-list-28">
+                            <ul>
+                                <h6 class="footer-title-28">Account</h6>
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/signup">Register</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="midd-footer-28 grid-col-2">
+                        <div class="copy-right">
+                            <p class="copy-footer-28">&copy; 2023 AspectHomes. All rights reserved</p>
+                        </div>
+                        <div class="main-social-footer-28">
+                            <a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+                            <a class="twitter" href="#"><span class="fa fa-twitter"aria-hidden="true"></span></a>
+                            <a class="instagram" href="#"><span class="fa fa-instagram"aria-hidden="true"></span></a>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <!-- //footer-28 block -->
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+                <span class="fa fa-arrow-up" aria-hidden="true"></span>
+            </button>
+            <script>
+                function open360Viewer(imageSrc) {
+                    var aScene = document.createElement('a-scene');
+                    var aSky = document.createElement('a-sky');
+                    aSky.setAttribute('src', imageSrc);
+                    aScene.appendChild(aSky);
+                    document.body.appendChild(aScene);
+            
+                    document.addEventListener('keydown', function (event) {
+                        if (event.key === 'Escape') {
+                            // Redirect to the residential page (adjust the URL accordingly)
+                            window.location.href = '/gallery';
+                        }
+                    });
+                }
+            </script>
+            <script>
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction()
+                };
+    
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("movetop").style.display = "block";
+                    } else {
+                        document.getElementById("movetop").style.display = "none";
+                    }
+                }
+    
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+            <!-- /move top -->
+        </section>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% load static  %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Login - AspectHomes</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style-freedom.css' %}">
+      <!-- Include jQuery from Google CDN -->
+      {% if include_jquery %}
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	  {% endif %}
+
+      {% if include_monetization %}
+         <script src="https://m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+      {% endif %}
+   </head>
+   <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/logo.png' %}" class="icon">
+
+   <body>
+      <div id="codefund">
+         <!-- fallback content -->
+      </div>
+      {% if include_codefund_script %}
+      <script src="https://codefund.io/properties/441/funder.js" async="async"></script>
+      {% endif %}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src='https://www.googletagmanager.com/gtag/js?id=G-98H8KRKT85'></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         
+         gtag('config', 'G-98H8KRKT85');
+      </script>
+      <meta name="robots" content="noindex">
+      <body>
+         <style>
+            * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            }
+         </style>
+         <section class="w3l-forml-main">
+            <div class="form-hnyv-sec">
+               <div class="overlay-coming">
+                  <!--form-stars-here-->
+                  <div class="form-wrapv">
+                     <div class="logo-livin text-center">
+                        <h1><a class="brand-logo" href="/index">ASPECTHOMES<span class="sub-dot">.</span></a></h1>
+                     </div>
+                     {%if messages %}
+                     {%for i in messages%}
+                     <script>alert("{{i}}");</script>
+                     {% endfor %}
+                     {% endif %}
+                     <h2>Sign in and let's innovate together!</h2>
+                     <form action="{% url 'logincheckup' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-sub-w3">
+                           <input type="text" name="log_username" placeholder="Username " required="" />
+                           <div class="icon-w3">
+                              <span class="fa fa-user" aria-hidden="true"></span>
+                           </div>
+                        </div>
+                        <div class="form-sub-w3">
+                           <input type="password" name="password" placeholder="Password" required="" />
+                           <div class="icon-w3">
+                              <span class="fa fa-lock" aria-hidden="true"></span>
+                           </div> 
+                        </div>
+                        <div class="form-sub-content">
+                           <p class="forgot-w3ls">Forgot Password?<a class href="#"> Click here</a></p>
+                           <p class="forgot-w3ls1">New User? <a class href="/signup">Signup here</a></p>
+                        </div>
+                        <div class="submit-button text-center">
+                           <button class="btn">Sign in</button>
+                        </div>
+                        
+                     </form>
+                  </div>
+               </div>
+            </div>
+            </div>
+            </div>
+         </section>
+   </body>
+</html>
+

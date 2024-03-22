@@ -1,0 +1,101 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+{% include 'nav.html' %}
+
+<section class="w3l-coming-soong-main">
+	<div class="comingv-inner">
+		<div class="overlay-coming">
+			<div class="hny-coming text-center">
+				<div class="logo-livin">
+					<a class="brand-logo" href="index.html">ASPECTHOMES<span class="sub-dot">.</span></a>
+					<!-- if logo is image enable this   
+													<a class="brand-logo" href="#index.html">
+														<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+													</a> -->
+				</div>
+				<div class="display-ad" style="margin: 8px auto; display: block; text-align:center;">
+						<!---728x90--->
+
+					</div>
+				<h2>Stay Tuned</h2>
+				<h1>We ARE COMING SOON</h1>
+				<!-- <p id="demo"></p> -->
+
+
+				<p class="sub-text">Thank you for reaching out to us.The Service will Come Soon..</p>
+				<div class="buttons">
+					<a href="index.html" class="actionbg">Go to Home</a>
+					<!-- <div class="button-4">
+						<div class="eff-4"></div>
+						<a href="#notify" class="btn">Notify Me!</a>
+					</div> -->
+
+				</div>
+				<div class="display-ad" style="margin: 8px auto; display: block; text-align:center;">
+						<!---728x90--->
+
+					</div>
+				<!-- notify-popup-->
+				<div id="notify" class="notify-pop-overlay">
+					<div class="notify-popup">
+						<h5>Please, write your Email below to stay in touch with us :</h5>
+						<p>Exclusive access to our Grand Opening!</p>
+						<form action="#" method="post" class="coming-soon">
+							<input type="email" id="email" name="email" placeholder="Click here enter your email"
+								required="">
+							<button type="submit" class="btn">Get Notify</button>
+						</form>
+						<a class="close" href="#coming-s">&times;</a>
+					</div>
+				</div>
+				<!-- //notify-popup -->
+
+			</div>
+
+
+		</div>
+	</div>
+	<!-- //coming -->
+	</div>
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+		// Update the count down every 1 second
+		var countdownfunction = setInterval(function () {
+
+			// Get todays date and time
+			var now = new Date().getTime();
+
+			// Find the distance between now an the count down date
+			var distance = countDownDate - now;
+
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// Output the result in an element with id="demo"
+			document.getElementById("demo").innerHTML = days + "<small>days</small> " + hours +
+				"<small>hrs</small> " +
+				minutes + "<small>min</small> " + seconds + "<small>sec</small> ";
+
+			// If the count down is over, write some text 
+			if (distance < 0) {
+				clearInterval(countdownfunction);
+				document.getElementById("demo").innerHTML = "EXPIRED";
+			}
+		}, 1000);
+	</script>
+
+</section>
+
+
+</body>
+
+<!-- Mirrored from p.w3layouts.com/demosWTR/Freedom/30-11-2019/livin-freedom_demo_Free/1835362585/web/coming-soon.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Mar 2023 05:10:18 GMT -->
+</html>

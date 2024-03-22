@@ -1,0 +1,84 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<footer>
+	<!-- footer-28 block -->
+	<section class="w3l-footer-28-main">
+		<div class="footer-28 section-gap1">
+			<div class="wrapper">
+				<div class="d-grid grid-col-4 footer-top-28">
+					<div class="footer-list-28">
+						<h6 class="footer-title-28">Menu Links</h6>
+						<ul>
+							<li><a href="/designerabout">About</a></li>
+                            <li><a href="/designerservice">Services</a></li>
+							<li><a href="/portfolio" >Portfolio</a></li>
+							<!--<li><a href="team.html">Team</a></li>-->
+						</ul>
+					</div>
+					<div class="footer-list-28">
+						<ul>
+							<h6 class="footer-title-28">Website Links</h6>
+							<li><a href="/designermanagebid">ManageBid</a></li>
+                            <li><a href="/designerbidding">View Bidding</a></li>
+						</ul>
+					</div>
+					<div class="footer-list-28">
+						<ul>
+							<h6 class="footer-title-28">Support</h6>
+							<li><a href="/designerfaq">FAQs</a></li>
+							<li><a href="/termsservicedesigner">Terms of Service</a></li>
+							<li><a href="privacy">Privacy & Policy</a></li>
+						</ul>
+					</div>
+					<div class="footer-list-28">
+						<ul>
+							<h6 class="footer-title-28">Account</h6>
+							<li><a href="/login">Sign In</a></li>
+                            <li><a href="/signup">Sign Up</a></li>
+							<li><a href="/contact">Visit Us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="midd-footer-28 grid-col-2">
+					<div class="copy-right">
+						<p class="copy-footer-28">&copy; 2023 AspectHomes. All rights reserved</p>
+					</div>
+					<div class="main-social-footer-28">
+						<a class="facebook" href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+						<a class="twitter" href="#twitter"><span class="fa fa-twitter"aria-hidden="true"></span></a>
+						<a class="instagram" href="#instagram"><span class="fa fa-instagram"aria-hidden="true"></span></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- //footer-28 block -->
+		<!-- move top -->
+		<button onclick="topFunction()" id="movetop" title="Go to top">
+			<span class="fa fa-arrow-up" aria-hidden="true"></span>
+		</button>
+		<script>
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function () {
+				scrollFunction()
+			};
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("movetop").style.display = "block";
+				} else {
+					document.getElementById("movetop").style.display = "none";
+				}
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+		</script>
+		<!-- /move top -->
+	</section>
+</footer>
+</html>

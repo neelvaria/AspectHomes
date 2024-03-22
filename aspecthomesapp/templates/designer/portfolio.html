@@ -1,0 +1,46 @@
+{% include 'designer/nav.html' %}
+{%load static%}
+
+
+<section class="w3l-inner-page-main">
+    <div class="inner-hyv-page">
+        <div class="wrapper">
+             <h2 class="hny-title text-center">Upload your Work<span class="sub-dot">.</sub></h2>
+        </div>
+    </div>
+</section>
+<!-- Headers-4 block -->
+<!--/inner-page -->
+
+<section class="w3l-request-main-6-bid center-box">
+    <div class="w3l-form-12-content section-gap">
+            <div class="wrapper">
+                <div class="grid grid-column-2 ">
+                    
+                    <div class="column1">
+                        <p class="tagline">ASPECTHOMES<label class="log-w">.</label></p>
+                        <p class="form-para">Upload your Work.</p>
+                            <form method="post" action="{% url 'biddata' %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {%if messages %}
+                                 {%for i in messages%}
+                                 <script>alert("{{i}}");</script>
+                                 {% endfor %}
+                                 {% endif %}
+                                <div class="">
+                                    <input type="file" id="image" name"" class="form-input" placeholder="Choose a file" />
+                                    <label for="image">Upload Image</label>
+                                </div>
+                                <div class="">
+                                    <textarea name="description" id="desc" cols="20" rows="2" placeholder="Description"/></textarea>
+                                </div>
+                                <button type="submit" class="btn">Upload work</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% include 'designer/footer.html' %}
+</body>
+</html>
