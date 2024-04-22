@@ -84,7 +84,7 @@ def logincheckup(request):
         except user.DoesNotExist:
             messages.error(request, "Incorrect email or password. Please try again.")
 
-    return render(request, "login.html")
+    return render(request,"login.html")
     
 def logout(request):
     try:
